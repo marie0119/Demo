@@ -1,0 +1,112 @@
+/* CSS Document */
+body {padding:0; margin:0;font-family:  "微软雅黑", 'Microsoft Yahei', 'Hiragino Sans GB', tahoma, arial, "宋体"; overflow-x: hidden;font-size:.28rem;}
+*{ margin:0; padding:0;line-height: 1}
+html{background-color: #232b34}
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+input{font-size:14px; font-family:"Microsoft Yahei";-webkit-appearance: none;}
+ul,ol{list-style-type:none; margin:0; padding:0;}
+select,input,img,select{vertical-align:middle;}
+a, button, input, textarea, select, li, div {
+  background: none;
+  -webkit-tap-highlight-color: rgba(255,0,0,0);
+  outline: none;
+  -webkit-appearance: none;
+  font-family: Helvetica,microsoft Yahei,Arial;
+}
+.fl{ float:left;}
+.fr{ float:right;}
+.cl {clear: both;}
+a{ text-decoration:none; border:none;}
+a:link{color:#000;}
+a:visited{color:#000;}
+a:hover,a:active,a:focus{text-decoration:none;}
+.hide{display:none;}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display: table;
+}
+.clearfix:after{
+    clear:both;
+}
+.clearfix{
+    *zoom:1;
+}
+.clearfix:before ,.clearfix:after {line-height:0;display:table;content:'';}
+.clearfix:after {clear:both;}
+
+.row {width:100%;}
+.row:before ,.row:after {line-height:0;display:table;content:'';}
+.row:after {clear:both;}
+.overflowHiden {overflow:hidden;}
+.nowrap{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.scrollbar::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+    background-color: #f5f5f5;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 619271 */
+  src: url('//at.alicdn.com/t/font_619271_izecsb371456ogvi.eot');
+  src: url('//at.alicdn.com/t/font_619271_izecsb371456ogvi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_619271_izecsb371456ogvi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_619271_izecsb371456ogvi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_619271_izecsb371456ogvi.svg#iconfont') format('svg');
+}
+.iconfont {font-family:'iconfont' !important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale;}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+
+}
+button,input{
+  border: none;
+  outline: none;
+}
+td , th{
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+}
+.txtOverflow{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.blackBg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.6);
+}
+.flex_wrap {
+  flex-wrap: wrap;
+}
+.flex_nowrap {
+  flex-wrap: nowrap;
+}
+.flex_box {
+  display: flex;
+  display: -webkit-flex;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #999;
+}
+.colorChange{
+  background: -webkit-linear-gradient(left, #feab2d , #FDD819); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #feab2d, #FDD819); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #feab2d, #FDD819); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #feab2d ,#FDD819); /* 标准的语法（必须放在最后） */
+}
+.shadowBox{
+  -moz-box-shadow: 0 0 .2rem #CDDDEC; /* 老的 Firefox */
+  box-shadow: 0 0 .2rem #CDDDEC;
+  border-radius: .2rem;
+  background-color: #fff;
+}
+
