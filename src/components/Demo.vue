@@ -24,8 +24,13 @@
           <div class="label">￥{{item.price2}}</div>
         </div>
         <div class="row-item row-item3">
-          <span v-if="item.upDown==undefined" class="white">--</span>
-          <span v-else :class="{color:item.upDown>0}">{{item.upDown}}</span>
+          <template v-if="item.updown==undefined" >
+            <span class="white">--</span>
+          </template>
+          <template v-else>
+            <span :class="{color:item.updown>0}"><span v-if="item.updown>0">+</span>{{item.updown}}</span>
+          </template>
+
         </div>
         <div class="row-item row-item4">
           <div class="btn-box"></div>
@@ -82,7 +87,13 @@
             } else {
               obj.price2 = data[key][1]
             }
-            obj.updown = data[key][2];
+            if(data[key][2]){
+              obj.updown =(data[key][2]*100).toFixed(2)+'%';
+              console.log((data[key][2]*100).toFixed(2),8888888888)
+            }else{
+              obj.updown ='--'
+            }
+            // obj.updown = data[key][2] == undefined ? '--' : data[key][2].toFixed(2);
             obj.topPrice = data[key][3];
             obj.lowPrice = data[key][4];
             obj.num = data[key][5] == undefined ? '--' : data[key][5].toFixed(3);
@@ -97,6 +108,7 @@
               this.cny.push(obj);
             }
           }
+          console.log(this.cny,7777777777)
         })
       }
     }
