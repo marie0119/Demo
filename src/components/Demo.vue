@@ -20,17 +20,13 @@
           <div class="num">量 {{item.num}}</div>
         </div>
         <div class="row-item row-item2 txtOverflow">
-          <div class="txtOverflow" :class="item.upDown>0?'color':'original'">{{item.price}}</div>
+          <div class="txtOverflow" :class="item.updown>0?'color':'original'">{{item.price}}</div>
           <div class="label">￥{{item.price2}}</div>
         </div>
         <div class="row-item row-item3">
-          <template v-if="item.updown==undefined" >
-            <span class="white">--</span>
-          </template>
-          <template v-else>
-            <span :class="{color:item.updown>0}"><span v-if="item.updown>0">+</span>{{item.updown}}</span>
-          </template>
-
+          <div :class="{color:item.updown>0}">
+            <span v-if="item.updown>0">+</span>{{item.updown}}<span v-if="item.updown!='--'">%</span>
+          </div>
         </div>
         <div class="row-item row-item4">
           <div class="btn-box"></div>
@@ -82,18 +78,16 @@
             obj.name = key.split('-')[0]
             obj.date = data[key][0];
             obj.price = data[key][1];
-            if ((data[key][1].toString().split('.')[1]) + 0 > 100000) {
+            if(data[key][1].toString().split('.')[1]!=undefined&&data[key][1].toString().split('.')[1].length>5){
               obj.price2 = data[key][1].toFixed(6);
             } else {
               obj.price2 = data[key][1]
             }
             if(data[key][2]){
-              obj.updown =(data[key][2]*100).toFixed(2)+'%';
-              console.log((data[key][2]*100).toFixed(2),8888888888)
+              obj.updown =(data[key][2]*100).toFixed(2);
             }else{
               obj.updown ='--'
             }
-            // obj.updown = data[key][2] == undefined ? '--' : data[key][2].toFixed(2);
             obj.topPrice = data[key][3];
             obj.lowPrice = data[key][4];
             obj.num = data[key][5] == undefined ? '--' : data[key][5].toFixed(3);
@@ -108,7 +102,7 @@
               this.cny.push(obj);
             }
           }
-          console.log(this.cny,7777777777)
+          console.log(this.arr)
         })
       }
     }
